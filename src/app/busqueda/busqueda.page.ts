@@ -6,6 +6,16 @@ import instantsearch from 'instantsearch.js';
 import { searchBox, hits,pagination ,analytics,panel,refinementList,clearRefinements} from 'instantsearch.js/es/widgets';
 import { Container } from '@angular/compiler/src/i18n/i18n_ast';
 //import { analytics } from 'firebase';
+//import algoliasearch from 'algoliasearch/lite';
+
+const searchClient = algoliasearch(
+  'YR2M25MXL9',
+  '915c8e96e039d8094abd074867973ead'
+);
+
+//const index=searchClient.initIndex('casas');
+
+
 
 @Component({
   selector: 'app-busqueda',
@@ -13,18 +23,31 @@ import { Container } from '@angular/compiler/src/i18n/i18n_ast';
   styleUrls: ['./busqueda.page.scss'],
 })
 export class BusquedaPage implements OnInit {
+  
+  
+
+  config = {
+    indexName: 'casas',
+    searchClient/*,
+    attributesForFaceting: [
+      'country'
+    ]*/
+  };
 
   search:any;
 
   constructor() { }
 
-  ngOnInit() {
- 
-const searchClient = algoliasearch(
-  'YR2M25MXL9',
-  '915c8e96e039d8094abd074867973ead'
-);
+  transformItems(items) {
+    return items.map(item => ({
+      ...item,
+      highlighted: item.highlighted.toUpperCase(),
+    }));
+  }
 
+  ngOnInit() {
+    
+/*
 this.search = instantsearch({
   indexName: 'casas',
   searchClient,
@@ -76,7 +99,7 @@ this.search = instantsearch({
    
 
     this.search.start();
-
+*/
     
   }
 

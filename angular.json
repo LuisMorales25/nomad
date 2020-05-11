@@ -33,14 +33,15 @@
             ],
             "styles": [
               {
-                "input": "src/theme/variables.scss"
+                "input": "node_modules/instantsearch.css/themes/algolia.css"
               },
               {
-                "input": "src/global.scss"
+                "input": "styles.css"
               }
               ,
+              
               {
-                "input": "node_modules/instantsearch.css/themes/algolia.css"
+                "input": "node_modules/nouislider/distribute/nouislider.min.css"
               }
             ],
             "scripts": []
@@ -102,7 +103,9 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "styles": [],
+            "styles": [ "node_modules/instantsearch.css/themes/algolia.css",
+              "node_modules/nouislider/distribute/nouislider.min.css",
+              "styles.css"],
             "scripts": [],
             "assets": [
               {

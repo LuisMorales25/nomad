@@ -7,19 +7,97 @@
 
 <ion-content>
 
-<div id="search-box">
+  <ais-instantsearch [config]="config">
+    <div class="left-panel">
+    <ais-search-box></ais-search-box>
+ 
+      <br>
+      <ais-panel header="Pais">
+        <ais-refinement-list
+          attribute="country"
+          operator="or"          
+        >
+        </ais-refinement-list>
+        	
+      </ais-panel>
+      <br>
+      <ais-panel header="Debe tener">
+
+        <ais-toggle
+        attribute="garden"
+        label="jardin"
+        [on]="true"
+        ></ais-toggle>
+        <ais-toggle
+        attribute="wi_fi"
+        label="Wi fi"
+        [on]="true"
+        ></ais-toggle>
+        <ais-toggle
+        attribute="air_condition"
+        label="Aire Acondicionado"
+        [on]="true"
+        ></ais-toggle>
+        <ais-toggle
+        attribute="car"
+        label="Vehiculo"
+        [on]="true"
+        ></ais-toggle>
+        <ais-toggle
+        attribute="swimming_pool"
+        label="piscina"
+        [on]="true"
+        ></ais-toggle>
+        <ais-toggle
+        attribute="terrace"
+        label="Terraza"
+        [on]="true"
+        ></ais-toggle>
+        
+        
+      </ais-panel>
+      <br>
+
+      <ais-panel header="Permitido">
+        <ais-toggle
+        attribute="pets"
+        label="Mascotas"
+        [on]="true"
+        ></ais-toggle>
+        <ais-toggle
+        attribute="smoking"
+        label="Fumar"
+        [on]="true"
+        ></ais-toggle>
+      </ais-panel>
+    	<br>
+<ais-panel header="baños">
+  <ais-range-input attribute="bathroom" currency=""></ais-range-input>
+</ais-panel>
+
+<br>
+<ais-panel header="tipo de casa">
+  <ais-menu attribute="tipo"></ais-menu>
+</ais-panel>
+<br>
+<ais-clear-refinements></ais-clear-refinements>
 
 </div>
-
-<div id="clear-refinements">
-
-</div>
-
-<div id="hits">
-
-</div>
-
-<div id="pagination">
-
-</div>
+<div class="right-panel">
+   
+    <ais-hits>
+      <ng-template let-hits="hits">
+        <ol class="ais-Hits-list">
+          <li *ngFor="let hit of hits" class="ais-Hits-item">
+            <h1>{{hit.title_house}}</h1><br>
+            <img src={{hit.image_path}} width="150px"><br>
+           <span>{{hit.Description}}</span>
+          </li>
+        </ol>
+      </ng-template>
+    </ais-hits>
+  </div>
+  </ais-instantsearch>
+  
+  
 </ion-content>

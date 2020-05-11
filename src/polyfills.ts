@@ -59,8 +59,9 @@
  };*/
 
  (window as any).process = {
-    env: { DEBUG: undefined },
-  };
+  env: { DEBUG: undefined },
+};
+
 
 import './zone-flags';
 

@@ -36,8 +36,8 @@ export class LoginPage implements OnInit {
   }
 
   mapas(){
-    this.route.navigate(['/continent']);
-    //this.route.navigate(['/busqueda']);
+    //this.route.navigate(['/continent']);
+    this.route.navigate(['/busqueda']);
   }
 
   async presentAlertRadio() {

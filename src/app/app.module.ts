@@ -30,6 +30,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgAisModule } from 'angular-instantsearch';
 
 
+
 export function createTranslateLoader(http: HttpClient){
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
