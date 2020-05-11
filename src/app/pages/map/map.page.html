@@ -1,0 +1,30 @@
+<ion-content>
+  <div id="map"></div>
+  <ion-item>
+    <ion-label>Paises</ion-label>
+    <ion-select ok-text="Okay" cancel-text="Dismiss" (ionChange)="changePlace($event)">
+      <ion-select-option *ngFor="let continentes of demoContinentes" [value]="continentes">
+        {{ continentes.title }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+  <br>
+  <ion-item >
+    <ion-label>ciudad</ion-label>
+    <ion-select ok-text="Okay" cancel-text="Dismiss" (ionChange)="changePlace2($event)">
+      <ion-select-option *ngFor="let continentes of demoCities" [value]="continentes">
+        {{ continentes.city }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+  <br>
+  <ion-item >
+    <ion-label>ciudad</ion-label>
+    <ion-select ok-text="Okay" cancel-text="Dismiss" (ionChange)="changePlace3($event)">
+      <ion-select-option *ngFor="let continentes of demoTowns" [value]="continentes">
+        {{ continentes.town }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+</ion-content>

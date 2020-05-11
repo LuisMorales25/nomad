@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Get a invitation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input [(ngModel)]=name type="Text" name="name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input [(ngModel)]=email type="Text" name="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Password</ion-label>
+    <ion-input [(ngModel)]="password"  type="Password" name="password"></ion-input>
+  </ion-item>
+  <br>
+  <br>
+  <ion-item>
+    <ion-label position="floating">House's Name</ion-label>
+    <ion-input [(ngModel)]="house_name"  type="Text" name="house_name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">House's Name</ion-label>
+    <ion-input [(ngModel)]="house_country"  type="Text" name="house_country"></ion-input>
+  </ion-item>
+  <ion-item>
+   
+    <ion-input type="file" accept=".png, .jpg" (change)="onUpload($event)"></ion-input>
+  </ion-item>
+  <br>
+  <input #imageUser type="hidden" [value]="urlImage | async">
+  <ion-button *ngIf="urlImage | async; else btnDisabled" (click)="NewUser()" expand="block" color="secondary">Crear</ion-button>
+
+</ion-content>
